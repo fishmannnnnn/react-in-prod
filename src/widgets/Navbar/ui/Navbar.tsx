@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
+import { AppLink, AppLinkTheme} from "@/shared/ui/AppLink/AppLink";
 
 import styles from "./Navbar.module.scss";
 

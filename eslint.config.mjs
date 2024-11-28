@@ -1,13 +1,17 @@
-import pluginReact from "eslint-plugin-react";
+import reactPlugin from "eslint-plugin-react";
 import globals from "globals";
+
+
 
 import pluginJs from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import parserTs from "@typescript-eslint/parser";
 
+
 /** @type {import("eslint").Linter.Config[]} */
 export default [
 	{
+		...reactPlugin.configs.flat["jsx-runtime"],
 		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 		languageOptions: {
 			parser: parserTs,
@@ -15,19 +19,25 @@ export default [
 				ecmaVersion: "latest",
 				sourceType: "module",
 			},
+			...reactPlugin.configs.flat.recommended.languageOptions,
 			globals: {
 				...globals.browser,
 				__IS_DEV__: true,
 			},
 		},
 		plugins: {
-			"react": pluginReact,
+			"react": reactPlugin,
 			"@typescript-eslint": tseslint,
+		},
+		settings: {
+			react: {
+				version: "detect",
+			},
 		},
 		rules: {
 			...pluginJs.configs.recommended.rules,
 			...tseslint.configs.recommended.rules,
-			...pluginReact.configs.recommended.rules,
+			...reactPlugin.configs.recommended.rules,
 
 			// Your custom rules
 			"react/jsx-indent": "off",
@@ -37,17 +47,19 @@ export default [
 			],
 			"import/no-unresolved": "off",
 			"import/prefer-default-export": "off",
-			"no-unused-vars": "warn",
 			"react/require-default-props": "off",
 			"react/react-in-jsx-scope": "off",
 			"react/jsx-props-no-spreading": "warn",
 			"react/function-component-definition": "off",
+			"react/jsx-uses-react": "error",
 			"no-shadow": "off",
 			"import/extensions": "off",
 			"import/no-extraneous-dependencies": "off",
 			"no-underscore-dangle": "off",
 			"react/no-deprecated": "warn",
 			"@typescript-eslint/ban-ts-comment": "warn",
+			"no-unused-vars": "off",
+			"@typescript-eslint/no-unused-vars": "warn",
 		},
 	},
 ];

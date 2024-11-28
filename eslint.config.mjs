@@ -11,6 +11,12 @@ import parserTs from "@typescript-eslint/parser";
 /** @type {import("eslint").Linter.Config[]} */
 export default [
 	{
+		files: ["webpack.config.ts"],
+        env: {
+            "node": true
+        }
+	},
+	{
 		...reactPlugin.configs.flat["jsx-runtime"],
 		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 		languageOptions: {

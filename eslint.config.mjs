@@ -1,20 +1,17 @@
 import reactPlugin from "eslint-plugin-react";
 import globals from "globals";
 
-
-
 import pluginJs from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import parserTs from "@typescript-eslint/parser";
-
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
 	{
 		files: ["webpack.config.ts"],
-        env: {
-            "node": true
-        }
+		env: {
+			node: true,
+		},
 	},
 	{
 		...reactPlugin.configs.flat["jsx-runtime"],
@@ -45,7 +42,7 @@ export default [
 			...tseslint.configs.recommended.rules,
 			...reactPlugin.configs.recommended.rules,
 
-			// Your custom rules
+			// custom rules
 			"react/jsx-indent": "off",
 			"react/jsx-filename-extension": [
 				2,

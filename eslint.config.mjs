@@ -1,16 +1,21 @@
+import jestPlugin from "eslint-plugin-jest";
 import reactPlugin from "eslint-plugin-react";
 import globals from "globals";
+
+
 
 import pluginJs from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import parserTs from "@typescript-eslint/parser";
+
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
 	{
 		files: ["webpack.config.ts"],
 		env: {
-			node: true,
+			"node": true,
+			"jest/globals": true,
 		},
 	},
 	{
@@ -31,6 +36,7 @@ export default [
 		plugins: {
 			"react": reactPlugin,
 			"@typescript-eslint": tseslint,
+			"jest": jestPlugin,
 		},
 		settings: {
 			react: {

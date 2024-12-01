@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import { useState } from "react";
 
-import { LanguageSwitcher } from "@/widgets/LanguageSwitcher";
-import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
+import { LanguageSwitcher } from "@/shared/ui/LanguageSwitcher";
+import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
 
 import styles from "./Sidebar.module.scss";
 

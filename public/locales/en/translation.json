@@ -1,4 +1,5 @@
 {
-    "text": "test",
-    "language": "Language"
+  "text": "test",
+  "language": "Language",
+  "pageNotFound": "Page not found"
 }

@@ -1,5 +1,7 @@
 {
   "text": "test",
-  "language": "Language",
-  "pageNotFound": "Page not found"
+  "language": "English",
+  "pageNotFound": "Page not found",
+  "errorPageText": "An error occured",
+  "reload": "Reload page"
 }

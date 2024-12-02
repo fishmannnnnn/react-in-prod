@@ -1,6 +1,8 @@
 {
   "about": "",
+  "errorPageText": "",
   "language": "",
   "main": "",
-  "pageNotFound": ""
+  "pageNotFound": "",
+  "reload": ""
 }

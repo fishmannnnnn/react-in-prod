@@ -1,12 +1,21 @@
 
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Sidebar } from "@/widgets/Sidebar";
+import { withTranslation } from "react-i18next";
+import { renderWithTranslation } from "@/shared/lib/tests/renderWithTranslation/renderWithTranslation";
 
 describe("Sidebar", () => {
-	test("test", () => {
-		render(<Sidebar />);
-		expect(screen.getByText("TEST")).toBeInTheDocument();
-        screen.debug()
+	test("test sidebar", () => {
+		renderWithTranslation(<Sidebar />);
+		expect(screen.getByTestId("sidebar")).toBeInTheDocument();
+	});
+
+	test("test sidebar toggle", () => {
+		renderWithTranslation(<Sidebar />);
+        const toggleBtn = screen.getByTestId("sidebar-toggle")
+		expect(screen.getByTestId("sidebar")).toBeInTheDocument();
+        fireEvent.click(toggleBtn);
+        expect(screen.getByTestId("sidebar")).toHaveClass("collapsed");
 	});
 
 });

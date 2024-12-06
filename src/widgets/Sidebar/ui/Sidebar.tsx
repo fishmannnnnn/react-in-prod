@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 
+import { Button } from "@/shared/ui/Button/Button";
 import { LanguageSwitcher } from "@/shared/ui/LanguageSwitcher";
 import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
 
@@ -22,9 +23,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
 				className,
 			)}
 		>
-			<button data-testid="sidebar-toggle" onClick={onToggle}>
+			<Button data-testid="sidebar-toggle" onClick={onToggle}>
 				Toggle
-			</button>
+			</Button>
 			<div className={styles.switchers}>
 				<ThemeSwitcher />
 				<LanguageSwitcher className={styles.lang} />

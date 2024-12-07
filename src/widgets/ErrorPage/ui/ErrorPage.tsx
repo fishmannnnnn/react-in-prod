@@ -21,7 +21,7 @@ export const ErrorPage = ({
 	return (
 		<Suspense fallback={<PageLoader />}>
 			<div className={clsx(styles.ErrorPage, className)}>
-				<div className={styles.errorText}>{t("errorPageText")}</div>
+				<p className={styles.errorText}>{t("errorPageText")}</p>
 				<Button theme={ButtonTheme.CLEAR} onClick={resetErrorBoundary}>
 					{t("reload")}
 				</Button>

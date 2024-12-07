@@ -1,15 +1,9 @@
-import clsx from "clsx";
-
 import "./Loader.scss";
 
 interface LoaderProps {
-    className?: string;
+	className?: string;
 }
 
 export const Loader = ({ className }: LoaderProps) => {
-    return (
-        <div className={"loader"}>
-
-        </div>
-    );
+	return <div className={"loader"}></div>;
 };

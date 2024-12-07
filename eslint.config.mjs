@@ -13,9 +13,11 @@ import parserTs from "@typescript-eslint/parser";
 export default [
 	{
 		files: ["webpack.config.ts"],
-		env: {
-			"node": true,
-			"jest/globals": true,
+		languageOptions: {
+			globals: {
+				...globals.node, // для Node окружения
+				...jestPlugin.environments.globals.globals, // Jest globals
+			},
 		},
 	},
 	{
@@ -61,6 +63,7 @@ export default [
 			"react/jsx-props-no-spreading": "warn",
 			"react/function-component-definition": "off",
 			"react/jsx-uses-react": "error",
+            "react/display-name": "off",
 			"no-shadow": "off",
 			"import/extensions": "off",
 			"import/no-extraneous-dependencies": "off",
@@ -70,23 +73,32 @@ export default [
 			"no-unused-vars": "off",
 			"@typescript-eslint/no-unused-vars": "warn",
 		},
-		overrides: [
-			{
-				files: ["**/*.test.js"],
-				env: {
-					jest: true, // now **/*.test.js files' env has both es6 *and* jest
-				},
-				// Can't extend in overrides: https://github.com/eslint/eslint/issues/8813
-				// "extends": ["plugin:jest/recommended"]
-				plugins: ["jest"],
-				rules: {
-					"jest/no-disabled-tests": "warn",
-					"jest/no-focused-tests": "error",
-					"jest/no-identical-title": "error",
-					"jest/prefer-to-have-length": "warn",
-					"jest/valid-expect": "error",
-				},
+	},
+	{
+		files: ["**/*.test.{js,ts,jsx,tsx}"],
+		languageOptions: {
+			parser: parserTs,
+			globals: {
+				...jestPlugin.environments.globals.globals,
 			},
-		],
+		},
+		plugins: {
+			jest: jestPlugin,
+		},
+		rules: {
+			"jest/no-disabled-tests": "warn",
+			"jest/no-focused-tests": "error",
+			"jest/no-identical-title": "error",
+			"jest/prefer-to-have-length": "warn",
+			"jest/valid-expect": "error",
+		},
+	},
+	{
+		files: ["config/**/*.ts"],
+		languageOptions: {
+			globals: {
+				__dirname: true,
+			},
+		},
 	},
 ];

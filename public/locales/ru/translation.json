@@ -1,7 +1,8 @@
 {
-  "text": "тест",
-  "language": "Русский",
-  "pageNotFound": "Страница не найдена",
-  "errorPageText": "Произошла ошибка",
-  "reload": "Перезагрузить страницу"
+	"text": "тест",
+	"language": "Русский",
+	"languageShort": "Ру",
+	"pageNotFound": "Страница не найдена",
+	"errorPageText": "Произошла ошибка",
+	"reload": "Перезагрузить страницу"
 }

@@ -36,3 +36,4 @@ jobs:
         if: always()
       - name: Run screenshot tests
         run: npm run test:ui:ci
+        if: always()

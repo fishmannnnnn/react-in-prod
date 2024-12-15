@@ -1,13 +1,11 @@
 import clsx from "clsx";
 import { ButtonHTMLAttributes, FC } from "react";
 
-
-
 import styles from "./Button.module.scss";
-
 
 export enum ButtonTheme {
 	CLEAR = "clear",
+	CLEAR_INVERTED = "clearInverted",
 	OUTLINE = "outline",
 	BACKGROUND = "background",
 	BACKGROUND_INVERTED = "backgroundInverted",
@@ -34,7 +32,7 @@ export const Button: FC<ButtonProps> = ({
 	size = ButtonSize.M,
 	...otherProps
 }) => {
-    const mods: Record<string, boolean> = {
+	const mods: Record<string, boolean> = {
 		[styles[theme]]: true,
 		[styles.square]: square,
 		[styles[size]]: true,

@@ -1,5 +1,6 @@
 import jestPlugin from "eslint-plugin-jest";
 import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
 import globals from "globals";
 
 
@@ -39,6 +40,7 @@ export default [
 			"react": reactPlugin,
 			"@typescript-eslint": tseslint,
 			"jest": jestPlugin,
+			"react-hooks": reactHooksPlugin,
 		},
 		settings: {
 			react: {
@@ -63,7 +65,7 @@ export default [
 			"react/jsx-props-no-spreading": "warn",
 			"react/function-component-definition": "off",
 			"react/jsx-uses-react": "error",
-            "react/display-name": "off",
+			"react/display-name": "off",
 			"no-shadow": "off",
 			"import/extensions": "off",
 			"import/no-extraneous-dependencies": "off",
@@ -72,6 +74,9 @@ export default [
 			"@typescript-eslint/ban-ts-comment": "warn",
 			"no-unused-vars": "off",
 			"@typescript-eslint/no-unused-vars": "warn",
+
+			"react-hooks/rules-of-hooks": "error",
+			"react-hooks/exhaustive-deps": "error",
 		},
 	},
 	{

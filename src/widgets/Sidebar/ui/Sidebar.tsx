@@ -46,7 +46,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 					className={styles.item}
 				>
 					<MainIcon className={styles.icon} />
-					<span className={styles.link}>{t("Главная")}</span>
+					<span className={styles.link}>{t("main")}</span>
 				</AppLink>
 				<AppLink
 					theme={AppLinkTheme.SECONDARY}
@@ -54,7 +54,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 					className={styles.item}
 				>
 					<AboutIcon className={styles.icon} />
-					<span className={styles.link}>{t("О сайте")}</span>
+					<span className={styles.link}>{t("about")}</span>
 				</AppLink>
 			</div>
 			<div className={styles.switchers}>

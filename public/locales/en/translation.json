@@ -4,5 +4,6 @@
   "languageShort": "En",
   "pageNotFound": "Page not found",
   "errorPageText": "An error occured",
-  "reload": "Reload page"
+  "reload": "Reload page",
+  "login": "Login"
 }

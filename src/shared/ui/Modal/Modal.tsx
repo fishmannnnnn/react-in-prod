@@ -7,10 +7,10 @@ import React, {
 	useState,
 } from "react";
 
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { Portal } from "@/shared/ui/Portal/Portal";
 
 import styles from "./Modal.module.scss";
-import { useTheme } from "@/app/providers/ThemeProvider";
 
 interface ModalProps {
 	className?: string;
@@ -29,7 +29,6 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
 	const mods: Record<string, boolean> = {
 		[styles.opened]: isOpen,
 		[styles.isClosing]: isClosing,
-		[styles[theme]]: true,
 	};
 
 	const handleClose = useCallback(() => {

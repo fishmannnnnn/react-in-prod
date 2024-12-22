@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 
 import { useTheme } from "@/app/providers/ThemeProvider/lib/useTheme";
 import { AppRouter } from "@/app/providers/router";
@@ -9,7 +9,6 @@ import { Sidebar } from "@/widgets/Sidebar";
 
 const App = () => {
 	const { theme } = useTheme();
-    const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div className={clsx("app", theme)}>
 			<Suspense fallback={<PageLoader />}>

@@ -3,9 +3,7 @@ import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { LoginModal } from "@/features/AuthByUsename";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { Modal } from "@/shared/ui/Modal/Modal";
 
 import styles from "./Navbar.module.scss";
 

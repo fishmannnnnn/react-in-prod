@@ -9,9 +9,11 @@
 	color: transparent;
 	text-shadow: 0 0 0 var(--primary-color);
 	caret-color: black;
+
 	&:focus {
 		outline: none;
 	}
+    
 	&::placeholder {
 		opacity: 0.4;
 		position: absolute;

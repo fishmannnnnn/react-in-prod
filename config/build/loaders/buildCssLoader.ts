@@ -17,7 +17,14 @@ export const buildCssLoader = (isDev: boolean) => {
 					},
 				},
 			},
-			"sass-loader",
+			{
+                loader: "sass-loader",
+                options: {
+                    sassOptions: {
+                        silenceDeprecations: ['legacy-js-api'] // Suppress deprecation warnings
+                    },
+                },
+            },
 		],
 	}
 }

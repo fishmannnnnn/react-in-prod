@@ -1,0 +1,25 @@
+.input {
+	background: transparent;
+	border: 1px solid blue;
+	border-radius: 12px;
+	padding: 0 8px;
+	outline: none;
+	width: 100%;
+	min-height: 48px;
+	color: transparent;
+	text-shadow: 0 0 0 var(--primary-color);
+	caret-color: black;
+	&:focus {
+		outline: none;
+	}
+	&::placeholder {
+		opacity: 0.4;
+		position: absolute;
+		left: 8px;
+		top: 50%;
+        font: inherit;
+        color: unset;
+		transform: translateY(-50%);
+		font-size: 18px;
+	}
+}

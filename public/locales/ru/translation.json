@@ -1,9 +1,11 @@
 {
-  "text": "тест",
-  "language": "Русский",
-  "languageShort": "Ру",
-  "pageNotFound": "Страница не найдена",
-  "errorPageText": "Произошла ошибка",
-  "reload": "Перезагрузить страницу",
-  "login": "Войти"
+	"text": "тест",
+	"language": "Русский",
+	"languageShort": "Ру",
+	"pageNotFound": "Страница не найдена",
+	"errorPageText": "Произошла ошибка",
+	"reload": "Перезагрузить страницу",
+	"login": "Войти",
+	"Username": "Логин",
+	"Password": "Пароль"
 }

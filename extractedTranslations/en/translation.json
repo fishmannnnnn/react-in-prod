@@ -1,10 +1,15 @@
 {
   "": "",
+  "Input": "",
+  "Password": "",
+  "Username": "",
   "about": "",
   "errorPageText": "",
   "language": "",
   "login": "",
   "main": "",
   "pageNotFound": "",
-  "reload": ""
+  "reload": "",
+  "Введите username": "",
+  "Введите пароль": ""
 }

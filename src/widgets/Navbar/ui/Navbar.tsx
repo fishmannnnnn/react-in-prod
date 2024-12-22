@@ -2,11 +2,12 @@ import clsx from "clsx";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { LoginModal } from "@/features/AuthByUsename";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Modal } from "@/shared/ui/Modal/Modal";
 
 import styles from "./Navbar.module.scss";
-import { Modal } from "@/shared/ui/Modal/Modal";
 
 interface NavbarProps {
 	className?: string;
@@ -15,18 +16,27 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 	const { t } = useTranslation();
 	const [isAuthModal, setIsAuthModal] = useState(false);
-	const onToggleModal = useCallback(() => {
-		setIsAuthModal(prev => !prev);
+
+	const onCloseModal = useCallback(() => {
+		setIsAuthModal(false);
 	}, []);
+
+	const onShowModal = useCallback(() => {
+		setIsAuthModal(true);
+	}, []);
+
+
 	return (
 		<div className={clsx(styles.Navbar, className)}>
 			<div className={styles.links}>
-				<Button className={styles.link} theme={ButtonTheme.CLEAR_INVERTED} onClick={onToggleModal}>
+				<Button
+					className={styles.link}
+					theme={ButtonTheme.CLEAR_INVERTED}
+					onClick={onShowModal}
+				>
 					{t("login")}
 				</Button>
-                <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident veritatis dolores doloribus aut, placeat laboriosam officiis cupiditate obcaecati facere fugiat tempora distinctio quos officia molestiae minus et ea repudiandae harum.
-                </Modal>
+				<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
 			</div>
 		</div>
 	);
